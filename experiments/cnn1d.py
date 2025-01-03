@@ -99,7 +99,7 @@ class ObjFunc:
     def _is_feature(self, xs):
         assert len(xs) == self.feature_length
 
-        return self.is_edge(xs, 0) \
+        return self._is_edge(xs, 0) \
             and self._is_edge(xs, 2, edge1=False) \
             and self._is_edge(xs, 3) \
             and self._is_edge(xs, 5, edge1=False)

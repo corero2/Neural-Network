@@ -2,7 +2,7 @@ from os.path import join
 from tqdm import tqdm
 import pandas as pd
 
-import torch
+import torch, os
 import torch.nn as nn
 
 
@@ -71,6 +71,8 @@ class Trainer:
         self.optimizer = optimizer
         self.loss_fn = loss_fn
         self.results_path = results_path
+        if not os.path.exists(self.results_path):
+            os.makedirs(self.results_path)
 
         self.train_df = None
 
